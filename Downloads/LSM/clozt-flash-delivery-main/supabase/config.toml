@@ -1,0 +1,7 @@
+project_id = "hgsxetegsktjwflvgdrv"
+
+[functions.ai-tryon]
+verify_jwt = true
+
+[functions.create-payment]
+verify_jwt = true

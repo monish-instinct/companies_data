@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CLOZET Design System - Ultra-Futuristic Cinematic UI
+Apple Vision Pro + Cyberpunk aesthetic with advanced glassmorphism
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme base */
+    --background: 220 27% 8%;
+    --foreground: 220 9% 97%;
+
+    /* Glass morphism cards */
+    --card: 220 20% 10%;
+    --card-foreground: 220 9% 97%;
+    --card-glass: 220 20% 15%;
+
+    /* Popover */
+    --popover: 220 20% 10%;
+    --popover-foreground: 220 9% 97%;
+
+    /* Neon primary - Cyan */
+    --primary: 189 100% 60%;
+    --primary-foreground: 220 27% 8%;
+    --primary-glow: 189 100% 70%;
+
+    /* Neon secondary - Purple */
+    --secondary: 270 100% 70%;
+    --secondary-foreground: 220 9% 97%;
+    --secondary-glow: 270 100% 80%;
+
+    /* Muted elements */
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 9% 60%;
+
+    /* Accent - Magenta */
+    --accent: 315 100% 65%;
+    --accent-foreground: 220 9% 97%;
+    --accent-glow: 315 100% 75%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 9% 97%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 220 9% 97%;
+
+    /* Borders and inputs */
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 189 100% 60%;
+
+    /* Glassmorphism gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(189 100% 60% / 0.8), hsl(270 100% 70% / 0.8));
+    --gradient-secondary: linear-gradient(135deg, hsl(270 100% 70% / 0.6), hsl(315 100% 65% / 0.6));
+    --gradient-hero: linear-gradient(135deg, hsl(220 27% 8%), hsl(220 20% 12%));
+    --gradient-card: linear-gradient(135deg, hsl(220 20% 10% / 0.8), hsl(220 20% 15% / 0.4));
+    
+    /* Neon glows */
+    --glow-primary: 0 0 20px hsl(189 100% 60% / 0.5);
+    --glow-secondary: 0 0 20px hsl(270 100% 70% / 0.5);
+    --glow-accent: 0 0 20px hsl(315 100% 65% / 0.5);
+
+    /* Typography scale - Futuristic */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    --font-size-7xl: 4.5rem;
+
+    /* Enhanced Neon Effects */
+    --glow-intense: 0 0 30px hsl(var(--primary) / 0.8);
+    --glow-soft: 0 0 15px hsl(var(--primary) / 0.4);
+    --glow-pulse: 0 0 40px hsl(var(--primary) / 0.6);
+    
+    /* Advanced Glassmorphism */
+    --glass-ultra: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --backdrop-blur-strong: blur(20px);
+    --backdrop-blur-ultra: blur(32px);
+
+    /* Animations */
+    --animation-fast: 0.15s ease-out;
+    --animation-base: 0.3s ease-out;
+    --animation-slow: 0.5s ease-out;
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light mode overrides (keeping dark as default for futuristic feel) */
+  .light {
+    --background: 220 9% 97%;
+    --foreground: 220 27% 8%;
+    --card: 220 9% 95%;
+    --card-foreground: 220 27% 8%;
+    --card-glass: 220 9% 90%;
+    --muted: 220 9% 90%;
+    --muted-foreground: 220 9% 40%;
+    --border: 220 20% 85%;
+    --input: 220 9% 95%;
+    --gradient-hero: linear-gradient(135deg, hsl(220 9% 97%), hsl(220 9% 95%));
+    --gradient-card: linear-gradient(135deg, hsl(220 9% 95% / 0.8), hsl(220 9% 90% / 0.4));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Futuristic Typography Classes */
+  .font-display {
+    font-family: 'Orbitron', 'Space Grotesk', monospace;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .font-body {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Glassmorphism utilities - Enhanced */
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  .glass-ultra {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(32px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  /* Neon glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+}
+
+@layer components {
+  /* Button variants using design system */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground;
+    @apply hover:glow-primary transition-all duration-300;
+    @apply font-semibold px-8 py-4 rounded-xl;
+  }
+
+  .btn-glass {
+    @apply glass hover:glass-strong text-foreground;
+    @apply hover:text-primary transition-all duration-300;
+    @apply font-medium px-6 py-3 rounded-lg;
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes glow {
+  from { box-shadow: var(--glow-primary); }
+  to { box-shadow: var(--glow-primary), var(--glow-secondary); }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
